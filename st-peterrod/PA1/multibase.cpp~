@@ -1,0 +1,89 @@
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+int main()
+{
+  
+  int test, testnum, num1, i, k ;
+  int j = 0;
+  int checkvec[1000000];
+  
+  cout << "Enter the number to test for palindromicity: ";
+  cin >> testnum;
+  const  int limit = testnum;
+  // int i =  7;  
+  
+  for ( i=2; i < limit; i++)
+    
+    {
+      
+     
+      testnum = limit;
+      j=0;
+      while (testnum >= i)
+	{
+
+	  num1=testnum % i;
+	  testnum/=i;
+	  checkvec[j] = num1;
+	  j++;
+	  
+	}
+      
+      checkvec[j] = testnum;
+	  //test code to see if we are getting the palindrome      
+      /*              int b;
+		  for ( b = 0; b <= j; b++) // ask carruthers about name lookup of 'k' changed for new ISO 'for' scoping 
+		  {
+		    cout <<"elements of checkvec"<< checkvec[b]<< endl;
+		    
+		  }
+		  
+		  cout << j << endl;
+    }
+}
+      */
+      //      cout<< testnum<< endl;  //why does testnum show up as a huge num when I include a string 2
+      int end = j;
+      int start = 0;
+      int newvec[j+1];
+      //cout  << i<< endl;
+      while(start <= j)  //what does it mean when it says something is too long for its type
+	    {	  
+	      newvec[start] = checkvec[end];
+	      // cout <<"The number is" << newvec[start];
+	      //     cout <<checkvec[end]<< endl;
+	      start++;
+	      end--;
+	    }
+      // cout << newvec[0]<< newvec[1]<<endl;
+      // cout << checkvec[0]<<checkvec[1]<< endl;   
+      test = 1;
+      for ( k=0; k <= j;k++)
+	{
+	   if (i == 7)
+	   cout << "nvec " <<  newvec[k] << "vec " << checkvec[k] << endl;
+	  if(newvec[k] != checkvec[k] )     
+	    {
+	      
+	      test = 0;
+	      //	if (i == 2)
+	      // cout <<"test " << test << "k " << k << endl;
+	      
+	    }
+	}
+       if (i == 7)
+      	cout << "I'm here " << test << endl;
+      if (test == 1)
+	{
+	  cout << i << endl; 
+	}
+    }
+  
+    
+
+
+}
+

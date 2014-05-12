@@ -1,0 +1,121 @@
+//binary
+
+#include <iostream>
+
+using namespace std;
+int main()
+{
+
+	int testnum, num1, i;
+	int j = 0;
+	int checkvec[100];
+
+  //First check is the test number is positive
+
+	cout << "Enter the test number: "<< endl;
+	cin >> testnum;
+	while (testnum < 0)
+	{
+	  cout << "Enter the test number: "<< endl; 
+		cin >> testnum;	
+	}
+
+
+//Now checking if the sequence entered is positive and binary
+
+	int bintest = 0; 
+	int count, remain;
+	int sequence;
+
+	while (sequence < 0 || bintest == 0)
+	{
+		cout << "Enter the test sequence: ";
+		cin >> sequence;
+
+
+//this while loops tells me the number or digits in the sequence entered
+
+		int tempseq = sequence;  
+		while (sequence != 0)
+		{
+			sequence/=10;
+			count++;
+		}
+
+//now we initialize the vector and place the digits in elements 0-count-1
+
+		int binvec[count];
+		int k = count-1;
+
+		while (tempseq != 0)
+		{
+			remain= tempseq % 10;
+			tempseq/= 10;
+			binvec[k] = remain
+			k--;
+		}
+
+//now we test for that all elements in the arrat binvec are binary and if so bintest should equal 1 
+	//  via the up counter
+
+		for (i=0;i< count-1; i++)
+		{
+			int up =0
+
+			if(binvec[i] == 1 || binvec[i] == 0)
+			{
+				up++;		
+			}
+		}
+
+		if (up == count)
+		{
+			bintest = 1;
+			else
+				bintest = 0;
+		}
+
+	}
+}
+
+/*
+const  int limit = testnum;
+  // int i =  7;  
+
+
+
+	{
+		testnum = limit;
+		j=0;
+		while (testnum >= 2)
+		{
+
+			num1=testnum % 2;
+			testnum/=2;
+			checkvec[j] = num1;
+			j++;
+		} 
+	}
+
+	checkvec[j] = testnum;
+
+	int end = j;
+	int start = 0;
+	int newvec[j+1];
+	while(start <= j) 
+	{	  
+		newvec[start] = checkvec[end];
+		start++;
+		end--;
+	}
+	
+}
+
+
+*/
+
+
+
+
+
+
